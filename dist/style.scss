@@ -1,0 +1,23 @@
+$react-fade-img-options: (
+  duration: 0.3s
+) !default;
+
+.react-fade-img {
+  $duration: map-get(
+    $map: $react-fade-img-options,
+    $key: duration
+  );
+
+  -moz-transition: opacity $duration ease-in;
+  -webkit-transition: opacity $duration ease-in;
+  -o-transition: opacity $duration ease-in;
+  transition: opacity $duration ease-in;
+
+  &[data-loaded="false"] {
+    opacity: 0.01;
+  }
+
+  &[data-loaded="true"] {
+    opacity: 1;
+  }
+}
