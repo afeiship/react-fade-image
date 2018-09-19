@@ -24,25 +24,11 @@ export default class extends Component {
   get src() {
     const { lazy, src } = this.props;
     return lazy ? { 'data-src': src } : { src };
-  }
+  };
 
-  constructor(inProps) {
-    super(inProps);
-    this.state = {
-      loaded: false
-    };
-  }
-
-  componentWillReceiveProps(inProps) {
-    const { lazy } = inProps;
-    const _loaded = this.state.loaded;
-
-    if (!lazy && !_loaded) {
-      const { src } = this.props;
-      this.root.src = src;
-      this.root.removeAttribute('data-src');
-    }
-  }
+  state = {
+    loaded: false
+  };
 
   _onLoad = (inEvent) => {
     const { onChange } = this.props;
@@ -57,7 +43,6 @@ export default class extends Component {
 
     return (
       <img
-        ref={root => this.root = root}
         onLoad={this._onLoad}
         data-loaded={loaded}
         className={classNames('react-fade-image', className)}
