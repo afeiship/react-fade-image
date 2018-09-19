@@ -18,7 +18,7 @@ export default class extends Component {
 
   static defaultProps = {
     lazy: false,
-    once: true,
+    once: false,
     onChange: noop
   };
   /*===properties end===*/
@@ -33,7 +33,7 @@ export default class extends Component {
   };
 
   shouldComponentUpdate() {
-    return !this.props.once;
+    return !(this.props.once && this.state.loaded);
   }
 
   _onLoad = (inEvent) => {
