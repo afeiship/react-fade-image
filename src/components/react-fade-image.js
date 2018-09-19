@@ -28,19 +28,21 @@ export default class extends Component {
     };
   }
 
+  componentWillReceiveProps(inProps) {
+    const { value } = inProps;
+    const _value = this.state.value;
+    if (!_value && value !== this.state.value) {
+      this.setState({ value });
+    }
+  }
+
   _onLoad = (inEvent) => {
     const { lazy, onChange } = this.props;
-    if (!lazy) {
-      this.setState({ value: true }, () => {
-        onChange();
-      });
-    } else {
-      onChange();
-    }
+    lazy ? onChange() : this.setState({ value: true }, onChange);
   };
 
   render() {
-    const { className, ...props } = this.props;
+    const { lazy, className, ...props } = this.props;
     const { value } = this.state;
 
     return (
