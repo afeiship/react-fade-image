@@ -9,49 +9,32 @@ export default class extends Component {
   /*===properties start===*/
   static propTypes = {
     className: PropTypes.string,
-    onChange: PropTypes.func,
     value: PropTypes.bool
   };
 
   static defaultProps = {
-    onChange: noop,
-    value: false
   };
   /*===properties end===*/
 
   constructor(inProps) {
     super(inProps);
     this.state = {
-      value: inProps.value
+      value: false
     };
   }
 
-  componentWillReceiveProps(inProps) {
-    const { value } = inProps;
-    if (value !== this.state.value) {
-      this.setState({ value });
-    }
-  }
-
   _onLoad = (inEvent) => {
-    const { onChange } = this.props;
-    const { value } = this.state;
-    const target = { value };
-    if (onChange === noop) {
-      this.setState({ value: true });
-    } else {
-      onChange({ target });
-    }
+    this.setState({ value: true });
   };
 
   render() {
-    const { value, className, ...props } = this.props;
-    const _value = this.state.value;
+    const { className, ...props } = this.props;
+    const { value } = this.state;
 
     return (
       <img
         onLoad={this._onLoad}
-        data-loaded={_value}
+        data-loaded={value}
         className={classNames('react-fade-image', className)}
         {...props}
       />
