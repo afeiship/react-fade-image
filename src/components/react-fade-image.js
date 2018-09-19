@@ -37,7 +37,7 @@ export default class extends Component {
     const { lazy } = inProps;
     const _loaded = this.state.loaded;
 
-    if (lazy && !_loaded) {
+    if (!lazy && !_loaded) {
       const { src } = this.props;
       this.root.src = src;
       this.root.removeAttribute('data-src');
