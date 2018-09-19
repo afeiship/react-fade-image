@@ -38,7 +38,9 @@ export default class extends Component {
 
   _onLoad = (inEvent) => {
     const { lazy, onChange } = this.props;
-    lazy ? onChange() : this.setState({ value: true }, onChange);
+    lazy ? onChange(inEvent) : this.setState({ value: true }, () => {
+      onChange(inEvent)
+    });
   };
 
   render() {
