@@ -9,22 +9,34 @@ export default class extends Component {
   /*===properties start===*/
   static propTypes = {
     className: PropTypes.string,
-    value: PropTypes.bool
+    lazy: PropTypes.bool,
+    value: PropTypes.bool,
+    onChange: PropTypes.func,
   };
 
   static defaultProps = {
+    lazy: false,
+    value: false,
+    onChange: noop
   };
   /*===properties end===*/
 
   constructor(inProps) {
     super(inProps);
     this.state = {
-      value: false
+      value: inProps.value
     };
   }
 
   _onLoad = (inEvent) => {
-    this.setState({ value: true });
+    const { lazy, onChange } = this.props;
+    if (!lazy) {
+      this.setState({ value: true }, () => {
+        onChange();
+      });
+    } else {
+      onChange();
+    }
   };
 
   render() {
