@@ -21,18 +21,23 @@ export default class extends Component {
   };
   /*===properties end===*/
 
+  get src() {
+    const { lazy, src } = this.props;
+    return lazy ? { 'data-src': src } : { src };
+  }
+
   constructor(inProps) {
     super(inProps);
     this.state = {
-      value: false
+      loaded: false
     };
   }
 
   componentWillReceiveProps(inProps) {
     const { lazy } = inProps;
-    const _value = this.state.value;
+    const _loaded = this.state.loaded;
 
-    if (lazy && !_value) {
+    if (lazy && !_loaded) {
       const { src } = this.props;
       this.root.src = src;
       this.root.removeAttribute('data-src');
@@ -41,34 +46,24 @@ export default class extends Component {
 
   _onLoad = (inEvent) => {
     const { onChange } = this.props;
-    this.setState({ value: true }, () => {
+    this.setState({ loaded: true }, () => {
       onChange(inEvent);
     });
   };
 
   render() {
     const { lazy, src, className, ...props } = this.props;
-    const { value } = this.state;
+    const { loaded } = this.state;
 
     return (
-      <ReactIfElse nodeName={React.Fragment} value={lazy}>
-        <img
-          ref={root => this.root = root}
-          onLoad={this._onLoad}
-          data-loaded={value}
-          className={classNames('react-fade-image', className)}
-          data-src={src}
-          {...props}
-        />
-        <img
-          ref={root => this.root = root}
-          onLoad={this._onLoad}
-          data-loaded={value}
-          className={classNames('react-fade-image', className)}
-          src={src}
-          {...props}
-        />
-      </ReactIfElse>
+      <img
+        ref={root => this.root = root}
+        onLoad={this._onLoad}
+        data-loaded={loaded}
+        className={classNames('react-fade-image', className)}
+        {...this.src}
+        {...props}
+      />
     );
   }
 }
