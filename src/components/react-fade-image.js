@@ -44,7 +44,7 @@ export default class extends Component {
   };
 
   render() {
-    const { lazy, src, className, ...props } = this.props;
+    const { once, lazy, src, className, ...props } = this.props;
     const { loaded } = this.state;
 
     return (
