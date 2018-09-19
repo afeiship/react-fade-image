@@ -52,7 +52,7 @@ export default class extends Component {
       <img
         onLoad={this._onLoad}
         data-loaded={_value}
-        className={classNames('react-fade-img', className)}
+        className={classNames('react-fade-image', className)}
         {...props}
       />
     );

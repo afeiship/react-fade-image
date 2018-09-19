@@ -1,10 +1,10 @@
 import './dev.scss';
-import ReactFadeImg from './main';
+import ReactFadeImage from './main';
 
 /*===example start===*/
 
-// install: npm install afeiship/react-fade-img --save
-// import : import ReactFadeImg from 'react-fade-img'
+// install: npm install afeiship/react-fade-image --save
+// import : import ReactFadeImage from 'react-fade-image'
 
 class App extends React.Component{
   state = {
@@ -20,8 +20,8 @@ class App extends React.Component{
 
   render(){
     return (
-      <div className="hello-react-fade-img">
-        <ReactFadeImg value={false} src="http://imglf4.nosdn.127.net/img/KzNuMlRKSFVENitYYjJBYnU5Q2cwQjRjd0ljSURUWmxZeGxvWVlOYnhHZWRReFBoUVJWUXFRPT0.jpg?imageView&thumbnail=1680x0&quality=96&stripmeta=0&type=jpg" ref='rc' />
+      <div className="hello-react-fade-image">
+        <ReactFadeImage value={false} src="http://imglf4.nosdn.127.net/img/KzNuMlRKSFVENitYYjJBYnU5Q2cwQjRjd0ljSURUWmxZeGxvWVlOYnhHZWRReFBoUVJWUXFRPT0.jpg?imageView&thumbnail=1680x0&quality=96&stripmeta=0&type=jpg" ref='rc' />
       </div>
     );
   }

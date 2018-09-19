@@ -1,2 +1,2 @@
-import ReactFadeImg from 'components/react-fade-img';
-export default ReactFadeImg;
+import ReactFadeImage from 'components/react-fade-image';
+export default ReactFadeImage;

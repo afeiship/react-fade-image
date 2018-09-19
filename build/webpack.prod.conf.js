@@ -9,8 +9,8 @@ base.entry = {
 base.output = {
   path: config.build.assetsRoot,
   publicPath: config.build.assetsPublicPath,
-  filename: 'react-fade-img.js',
-  library: 'ReactFadeImg',
+  filename: 'react-fade-image.js',
+  library: 'ReactFadeImage',
   libraryTarget: 'umd'
 }
 

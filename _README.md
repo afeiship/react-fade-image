@@ -1,4 +1,4 @@
-# react-fade-img
+# react-fade-image
 > Fade or lazy image for react
 
 ## properties:
@@ -8,19 +8,19 @@ BACKUP_PROPERTIES
 
 ## install && import:
 ```bash
-npm install --save afeiship/react-fade-img --registry=https://registry.npm.taobao.org
+npm install --save afeiship/react-fade-image --registry=https://registry.npm.taobao.org
 ```
 
 ```js
-import ReactFadeImg from 'react-fade-img';
+import ReactFadeImage from 'react-fade-image';
 ```
 
 ```scss
 // customize your styles:
-$react-fade-img-options:(
+$react-fade-image-options:(
 );
 
-@import 'node_modules/react-fade-img/dist/style.scss';
+@import 'node_modules/react-fade-image/dist/style.scss';
 ```
 
 
