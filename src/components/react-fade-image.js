@@ -12,11 +12,13 @@ export default class extends Component {
   static propTypes = {
     className: PropTypes.string,
     lazy: PropTypes.bool,
+    once: PropTypes.bool,
     onChange: PropTypes.func,
   };
 
   static defaultProps = {
     lazy: false,
+    once: true,
     onChange: noop
   };
   /*===properties end===*/
@@ -29,6 +31,10 @@ export default class extends Component {
   state = {
     loaded: false
   };
+
+  shouldComponentUpdate() {
+    return !this.props.once;
+  }
 
   _onLoad = (inEvent) => {
     const { onChange } = this.props;

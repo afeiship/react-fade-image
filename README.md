@@ -7,13 +7,13 @@
   static propTypes = {
     className: PropTypes.string,
     lazy: PropTypes.bool,
-    value: PropTypes.bool,
+    once: PropTypes.bool,
     onChange: PropTypes.func,
   };
 
   static defaultProps = {
     lazy: false,
-    value: false,
+    once: true,
     onChange: noop
   };
   
@@ -45,8 +45,7 @@ $react-fade-image-options:(
 
 class App extends React.Component {
   state = {
-    lazyValue: false,
-    triggerManualValue: false,
+    lazyValue: true,
   };
 
   constructor(props) {
@@ -56,16 +55,12 @@ class App extends React.Component {
     window.rc = this.refs.rc;
   }
 
-  _onChange = inEvent => {
-    // debugger
-    this.setState({ lazyValue: true });
-  };
-
   _onClick = (inEvent) => {
-    this.setState({ triggerManualValue: true });
+    this.setState({ lazyValue: false });
   };
 
   render() {
+    const { lazyValue } = this.state;
     return (
       <div className="hello-react-fade-image">
         <button className="button" onClick={this._onClick}>Trigger Load Image</button>
@@ -75,19 +70,11 @@ class App extends React.Component {
           </p>
           <p>
             <ReactFadeImage
-              value={this.state.lazyValue}
-              onChange={this._onChange}
-              lazy={true} src="http://imglf5.nosdn.127.net/img/MW9uQWcrU0tCTXF2MkRPRG1VcTNOVVZ0NWRRS01OY3Y3TUl0NCtwUTBiS0JVd3RUdythd0VBPT0.jpg?imageView&thumbnail=1680x0&quality=96&stripmeta=0&type=jpg" ref='rc' />
+              lazy={lazyValue} src="http://imglf6.nosdn.127.net/img/ZWl4dnBUa0VLMzhXRThRbnV3UWlQelY1dGNPeUdQMUhib2IwOEVvTEhvUTRISnUwNmkwekV3PT0.jpg?imageView&thumbnail=3000y2000&type=jpg&quality=96&stripmeta=0&type=jpg%7Cwatermark&type=2&text=wqkgeHVlc2h1wrdBcnRvbW8gLyA3NzQzNzQ2NTUubG9mdGVyLmNvbQ==&font=bXN5aA==&gravity=southwest&dissolve=30&fontsize=680&dx=32&dy=36&stripmeta=0" ref='rc' />
           </p>
           <p>
             <ReactFadeImage
-              value={this.state.triggerManualValue}
-              lazy={true} src="http://imglf6.nosdn.127.net/img/ZWl4dnBUa0VLMzhXRThRbnV3UWlQelY1dGNPeUdQMUhib2IwOEVvTEhvUTRISnUwNmkwekV3PT0.jpg?imageView&thumbnail=3000y2000&type=jpg&quality=96&stripmeta=0&type=jpg%7Cwatermark&type=2&text=wqkgeHVlc2h1wrdBcnRvbW8gLyA3NzQzNzQ2NTUubG9mdGVyLmNvbQ==&font=bXN5aA==&gravity=southwest&dissolve=30&fontsize=680&dx=32&dy=36&stripmeta=0" ref='rc' />
-          </p>
-          <p>
-            <ReactFadeImage
-              value={this.state.triggerManualValue}
-              lazy={true} src="http://imglf5.nosdn.127.net/img/K0FrVGtpUSszZU1kODV6SzZUSFZaNFhGaEliU29uSmJzL3lXdUpoK3ZLdjMyNWp1OWJTRnB3PT0.jpg?imageView&thumbnail=3000y1687&type=jpg&quality=96&stripmeta=0&type=jpg" ref='rc' />
+              lazy={lazyValue} src="http://imglf5.nosdn.127.net/img/K0FrVGtpUSszZU1kODV6SzZUSFZaNFhGaEliU29uSmJzL3lXdUpoK3ZLdjMyNWp1OWJTRnB3PT0.jpg?imageView&thumbnail=3000y1687&type=jpg&quality=96&stripmeta=0&type=jpg" ref='rc' />
           </p>
 
         </div>
