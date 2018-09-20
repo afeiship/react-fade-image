@@ -6,6 +6,9 @@ import noop from 'noop';
 import objectAssign from 'object-assign';
 import blankGif from './blank.gif';
 
+const DATA_LOADED = 'data-loaded';
+const BOOL_TRUE = 'true';
+
 export default class extends Component {
   /*===properties start===*/
   static propTypes = {
@@ -27,12 +30,16 @@ export default class extends Component {
     return lazy ? { 'data-src': src } : { src };
   };
 
+  get loaded() {
+    return this.state.loaded || this.root.getAttribute(DATA_LOADED) === BOOL_TRUE;
+  }
+
   state = {
     loaded: false
   };
 
   shouldComponentUpdate() {
-    return !(this.props.once && this.state.loaded);
+    return !(this.props.once && this.loaded);
   }
 
   _onLoad = (inEvent) => {
@@ -50,6 +57,7 @@ export default class extends Component {
 
     return (
       <img
+        ref={root => this.root = root}
         onLoad={this._onLoad}
         data-loaded={loaded}
         className={classNames('react-fade-image', className)}
