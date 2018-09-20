@@ -8,16 +8,34 @@ $react-fade-image-options: (
     $key: duration
   );
 
-  -moz-transition: opacity $duration ease-in;
-  -webkit-transition: opacity $duration ease-in;
-  -o-transition: opacity $duration ease-in;
-  transition: opacity $duration ease-in;
+  @keyframes react-fade-image-fade-in {
+    0% {
+      opacity: 0;
+    }
 
-  &[data-loaded="false"] {
-    opacity: 0.01;
+    100% {
+      opacity: 1;
+    }
   }
 
+  @keyframes react-fade-image-fade-out {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  &.loaded-true,
   &[data-loaded="true"] {
-    opacity: 1;
+    animation: react-fade-image-fade-in $duration ease-in forwards;
+  }
+
+  &,
+  &.loaded-false,
+  &[data-loaded="false"] {
+    animation: react-fade-image-fade-out $duration ease-out forwards;
   }
 }

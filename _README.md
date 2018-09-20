@@ -28,3 +28,10 @@ $react-fade-image-options:(
 ```jsx
 BACKUP_USAGE
 ```
+
+## skills:
++ 当图片没有 src 时，有 1px 边框无法移除
+  - 解决方式： 用 blank.gif 占位 - 可行
+  - 解决方式： 用 content:''; 不行
++ 用 transition 做动画，会出现卡顿，这里改用 animation
+

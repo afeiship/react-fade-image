@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import noop from 'noop';
 import objectAssign from 'object-assign';
-import ReactIfElse from 'react-if-else';
-
+import blankGif from './blank.gif';
 
 export default class extends Component {
   /*===properties start===*/
@@ -37,10 +36,12 @@ export default class extends Component {
   }
 
   _onLoad = (inEvent) => {
-    const { onChange } = this.props;
-    this.setState({ loaded: true }, () => {
-      onChange(inEvent);
-    });
+    const { lazy, onChange } = this.props;
+    if (!lazy) {
+      this.setState({ loaded: true }, () => {
+        onChange(inEvent);
+      });
+    }
   };
 
   render() {
@@ -52,6 +53,7 @@ export default class extends Component {
         onLoad={this._onLoad}
         data-loaded={loaded}
         className={classNames('react-fade-image', className)}
+        src={blankGif}
         {...this.src}
         {...props}
       />
