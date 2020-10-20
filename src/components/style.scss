@@ -6,23 +6,13 @@ $react-fade-image-options: (
   $duration: map-get( $map: $react-fade-image-options, $key: duration );
 
   @keyframes react-fade-image-fade-in {
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
+    0% { opacity: 0; }
+    100% { opacity: 1; }
   }
 
   @keyframes react-fade-image-fade-out {
-    0% {
-      opacity: 1;
-    }
-
-    100% {
-      opacity: 0;
-    }
+    0% { opacity: 1; }
+    100% { opacity: 0; }
   }
 
   &.loaded-true,
