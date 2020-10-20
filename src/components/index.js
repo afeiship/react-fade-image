@@ -1,21 +1,28 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
+import noop from '@feizheng/noop';
 import classNames from 'classnames';
-import noop from 'noop';
-import objectAssign from 'object-assign';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import blankGif from './blank.gif';
 
 const DATA_LOADED = 'data-loaded';
 const BOOL_TRUE = 'true';
 
-export default class extends Component {
-  /*===properties start===*/
+const CLASS_NAME = 'react-fade-image';
+
+export default class ReactFadeImage extends Component {
+  static displayName = CLASS_NAME;
+  static version = '__VERSION__';
   static propTypes = {
+    /**
+     * The extended className for component.
+     */
     className: PropTypes.string,
     lazy: PropTypes.bool,
     once: PropTypes.bool,
-    onChange: PropTypes.func,
+    /**
+     * The change handler.
+     */
+    onChange: PropTypes.func
   };
 
   static defaultProps = {
@@ -23,15 +30,16 @@ export default class extends Component {
     once: false,
     onChange: noop
   };
-  /*===properties end===*/
 
   get src() {
     const { lazy, src } = this.props;
     return lazy ? { 'data-src': src } : { src };
-  };
+  }
 
   get loaded() {
-    return this.state.loaded || this.root.getAttribute(DATA_LOADED) === BOOL_TRUE;
+    return (
+      this.state.loaded || this.root.getAttribute(DATA_LOADED) === BOOL_TRUE
+    );
   }
 
   state = {
@@ -42,7 +50,7 @@ export default class extends Component {
     return !(this.props.once && this.loaded);
   }
 
-  _onLoad = (inEvent) => {
+  handleLoad = (inEvent) => {
     const { lazy, onChange } = this.props;
     if (!lazy) {
       this.setState({ loaded: true }, () => {
@@ -57,8 +65,10 @@ export default class extends Component {
 
     return (
       <img
-        ref={root => this.root = root}
-        onLoad={this._onLoad}
+        data-component={CLASS_NAME}
+        className={classNames(CLASS_NAME, className)}
+        ref={(root) => (this.root = root)}
+        onLoad={this.handleLoad}
         data-loaded={loaded}
         className={classNames('react-fade-image', className)}
         src={blankGif}

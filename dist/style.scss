@@ -3,10 +3,7 @@ $react-fade-image-options: (
 ) !default;
 
 .react-fade-image {
-  $duration: map-get(
-    $map: $react-fade-image-options,
-    $key: duration
-  );
+  $duration: map-get( $map: $react-fade-image-options, $key: duration );
 
   @keyframes react-fade-image-fade-in {
     0% {
