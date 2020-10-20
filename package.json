@@ -1,6 +1,6 @@
 {
   "name": "@feizheng/react-fade-image",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Fade or lazy image for react.",
   "main": "dist/index.js",
   "scripts": {

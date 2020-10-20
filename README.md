@@ -20,8 +20,8 @@ npm update @feizheng/react-fade-image
 | Name      | Type   | Required | Default | Description                           |
 | --------- | ------ | -------- | ------- | ------------------------------------- |
 | className | string | false    | -       | The extended className for component. |
-| lazy      | bool   | false    | false   |
-| once      | bool   | false    | false   |
+| lazy      | bool   | false    | false   | If set lazy load mode.                |
+| once      | bool   | false    | false   | Lazy only once.                       |
 | onChange  | func   | false    | noop    | The change handler.                   |
 
 

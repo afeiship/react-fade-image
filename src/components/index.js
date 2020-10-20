@@ -6,7 +6,6 @@ import blankGif from './blank.gif';
 
 const DATA_LOADED = 'data-loaded';
 const BOOL_TRUE = 'true';
-
 const CLASS_NAME = 'react-fade-image';
 
 export default class ReactFadeImage extends Component {
@@ -17,7 +16,13 @@ export default class ReactFadeImage extends Component {
      * The extended className for component.
      */
     className: PropTypes.string,
+    /**
+     * If set lazy load mode.
+     */
     lazy: PropTypes.bool,
+    /**
+     * Lazy only once.
+     */
     once: PropTypes.bool,
     /**
      * The change handler.
