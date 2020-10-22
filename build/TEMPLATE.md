@@ -35,6 +35,9 @@ __GENERATE_DAPP__
 ## documentation
 - https://afeiship.github.io/react-fade-image/
 
+## resources
+- https://github.com/aFarkas/lazysizes
+
 
 ## license
 Code released under [the MIT license](https://github.com/afeiship/react-fade-image/blob/master/LICENSE.txt).
