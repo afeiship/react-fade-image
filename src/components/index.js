@@ -2,11 +2,12 @@ import noop from '@feizheng/noop';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import blankGif from './blank.gif';
 
 const DATA_LOADED = 'data-loaded';
 const BOOL_TRUE = 'true';
 const CLASS_NAME = 'react-fade-image';
+const BLANK_IMG =
+  'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
 
 export default class ReactFadeImage extends Component {
   static displayName = CLASS_NAME;
@@ -76,7 +77,7 @@ export default class ReactFadeImage extends Component {
         onLoad={this.handleLoad}
         data-loaded={loaded}
         className={classNames('react-fade-image', className)}
-        src={blankGif}
+        src={BLANK_IMG}
         {...this.src}
         {...props}
       />
