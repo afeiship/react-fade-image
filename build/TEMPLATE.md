@@ -11,11 +11,6 @@
 npm install -S @feizheng/react-fade-image
 ```
 
-## update
-```shell
-npm update @feizheng/react-fade-image
-```
-
 ## properties
 __GENERATE_DOCS__
 

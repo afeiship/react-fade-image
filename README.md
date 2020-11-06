@@ -11,11 +11,6 @@
 npm install -S @feizheng/react-fade-image
 ```
 
-## update
-```shell
-npm update @feizheng/react-fade-image
-```
-
 ## properties
 | Name      | Type   | Required | Default | Description                           |
 | --------- | ------ | -------- | ------- | ------------------------------------- |
@@ -87,6 +82,9 @@ npm update @feizheng/react-fade-image
 
 ## documentation
 - https://afeiship.github.io/react-fade-image/
+
+## resources
+- https://github.com/aFarkas/lazysizes
 
 
 ## license
