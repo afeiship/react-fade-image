@@ -19,9 +19,11 @@ class App extends React.Component {
       <ReactDemokit
         className="p-3 app-container"
         url="https://github.com/afeiship/react-fade-image">
-        <button className="button" onClick={this.handleClick}>
-          Trigger Load Image
-        </button>
+        <p className="text-center">
+          <button className="button is-large is-fullwidth is-primary" onClick={this.handleClick}>
+            Trigger Load Image
+          </button>
+        </p>
         <div className="list">
           <p>
             <ReactFadeImage src="https://imglf4.nosdn.127.net/img/KzNuMlRKSFVENitYYjJBYnU5Q2cwQjRjd0ljSURUWmxZeGxvWVlOYnhHZWRReFBoUVJWUXFRPT0.jpg?imageView&thumbnail=1680x0&quality=96&stripmeta=0&type=jpg" />

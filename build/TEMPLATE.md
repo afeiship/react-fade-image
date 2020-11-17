@@ -8,7 +8,7 @@
 
 ## installation
 ```shell
-npm install -S @feizheng/react-fade-image
+npm install -S @jswork/react-fade-image
 ```
 
 ## properties
@@ -17,7 +17,10 @@ __GENERATE_DOCS__
 ## usage
 1. import css
   ```scss
-  @import "~@feizheng/react-fade-image/dist/style.scss";
+  @import "~@jswork/react-fade-image/dist/style.css";
+
+  // or use sass
+  @import "~@jswork/react-fade-image/dist/style.scss";
 
   // customize your styles:
   $react-fade-image-options: ()
@@ -29,9 +32,6 @@ __GENERATE_DAPP__
 
 ## documentation
 - https://afeiship.github.io/react-fade-image/
-
-## resources
-- https://github.com/aFarkas/lazysizes
 
 
 ## license

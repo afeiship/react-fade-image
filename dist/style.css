@@ -1,0 +1,17 @@
+@keyframes react-fade-image-fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes react-fade-image-fade-out {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+.react-fade-image.loaded-true, .react-fade-image[data-loaded="true"] {
+  animation: react-fade-image-fade-in 1.01s ease-in forwards; }
+
+.react-fade-image, .react-fade-image.loaded-false, .react-fade-image[data-loaded="false"] {
+  animation: react-fade-image-fade-out 1.01s ease-out forwards; }

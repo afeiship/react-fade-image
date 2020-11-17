@@ -1,13 +1,15 @@
 {
-  "name": "@feizheng/react-fade-image",
-  "version": "1.0.3",
+  "name": "@jswork/react-fade-image",
+  "version": "1.0.0",
   "description": "Fade or lazy image for react.",
   "main": "dist/index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack -p",
+    "postbuild": "node-sass src/components/style.scss dist/style.css",
     "predocs": "node build/markdown.js",
     "docs": "cross-env NODE_ENV=docs webpack -p",
+    "postdocs": "t2k",
     "pages": "./bin/docs.rb",
     "start": "node build/server.js",
     "test": "jest"
@@ -23,7 +25,10 @@
     "image",
     "img",
     "lazy",
-    "fade-out"
+    "fade-out",
+    "component",
+    "components",
+    "widget"
   ],
   "author": "afei",
   "license": "MIT",
@@ -53,12 +58,11 @@
     "@babel/preset-react": "^7.10.4",
     "@babel/register": "^7.11.5",
     "@feizheng/next-replace-in-file": "^1.0.1",
-    "@feizheng/rake-git": "^1.2.1",
     "@feizheng/react-demokit": "^1.0.5",
     "@feizheng/react-markdown-props": "^1.2.3",
-    "@feizheng/webpack-lib-kits": "^1.1.28",
+    "@feizheng/webpack-lib-kits": "^1.1.30",
     "@testing-library/react": "^11.0.4",
-    "autoprefixer": "^9.0.0",
+    "autoprefixer": "^10.0.1",
     "babel-loader": "^8.1.0",
     "cross-env": "^7.0.2",
     "enzyme": "^3.11.0",
@@ -81,7 +85,7 @@
     "prop-types": "^15.7.2"
   },
   "dependencies": {
-    "@feizheng/noop": "^1.0.0",
+    "@jswork/noop": "^1.0.0",
     "classnames": "^2.2.6"
   },
   "publishConfig": {

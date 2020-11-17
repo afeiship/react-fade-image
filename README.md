@@ -8,7 +8,7 @@
 
 ## installation
 ```shell
-npm install -S @feizheng/react-fade-image
+npm install -S @jswork/react-fade-image
 ```
 
 ## properties
@@ -23,7 +23,10 @@ npm install -S @feizheng/react-fade-image
 ## usage
 1. import css
   ```scss
-  @import "~@feizheng/react-fade-image/dist/style.scss";
+  @import "~@jswork/react-fade-image/dist/style.css";
+
+  // or use sass
+  @import "~@jswork/react-fade-image/dist/style.scss";
 
   // customize your styles:
   $react-fade-image-options: ()
@@ -51,9 +54,11 @@ npm install -S @feizheng/react-fade-image
         <ReactDemokit
           className="p-3 app-container"
           url="https://github.com/afeiship/react-fade-image">
-          <button className="button" onClick={this.handleClick}>
-            Trigger Load Image
-          </button>
+          <p className="text-center">
+            <button className="button is-large is-fullwidth is-primary" onClick={this.handleClick}>
+              Trigger Load Image
+            </button>
+          </p>
           <div className="list">
             <p>
               <ReactFadeImage src="https://imglf4.nosdn.127.net/img/KzNuMlRKSFVENitYYjJBYnU5Q2cwQjRjd0ljSURUWmxZeGxvWVlOYnhHZWRReFBoUVJWUXFRPT0.jpg?imageView&thumbnail=1680x0&quality=96&stripmeta=0&type=jpg" />
@@ -82,9 +87,6 @@ npm install -S @feizheng/react-fade-image
 
 ## documentation
 - https://afeiship.github.io/react-fade-image/
-
-## resources
-- https://github.com/aFarkas/lazysizes
 
 
 ## license
