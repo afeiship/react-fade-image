@@ -4,7 +4,8 @@
       "t2k"
     ],
     "after:bump": [
-      "npm run docs && npm run build"
+      "npm run docs",
+      "npm run build"
     ]
   },
   "github": {
