@@ -37,14 +37,14 @@ __GENERATE_DAPP__
 ## license
 Code released under [the MIT license](https://github.com/afeiship/react-fade-image/blob/master/LICENSE.txt).
 
-[version-image]: https://img.shields.io/npm/v/@feizheng/react-fade-image
-[version-url]: https://npmjs.org/package/@feizheng/react-fade-image
+[version-image]: https://img.shields.io/npm/v/@jswork/react-fade-image
+[version-url]: https://npmjs.org/package/@jswork/react-fade-image
 
-[license-image]: https://img.shields.io/npm/l/@feizheng/react-fade-image
+[license-image]: https://img.shields.io/npm/l/@jswork/react-fade-image
 [license-url]: https://github.com/afeiship/react-fade-image/blob/master/LICENSE.txt
 
-[size-image]: https://img.shields.io/bundlephobia/minzip/@feizheng/react-fade-image
+[size-image]: https://img.shields.io/bundlephobia/minzip/@jswork/react-fade-image
 [size-url]: https://github.com/afeiship/react-fade-image/blob/master/dist/react-fade-image.min.js
 
-[download-image]: https://img.shields.io/npm/dm/@feizheng/react-fade-image
-[download-url]: https://www.npmjs.com/package/@feizheng/react-fade-image
+[download-image]: https://img.shields.io/npm/dm/@jswork/react-fade-image
+[download-url]: https://www.npmjs.com/package/@jswork/react-fade-image

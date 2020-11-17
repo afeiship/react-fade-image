@@ -1,4 +1,4 @@
-import ReactDemokit from '@feizheng/react-demokit';
+import ReactDemokit from '@jswork/react-demokit';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactFadeImage from '../src/main';
