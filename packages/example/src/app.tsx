@@ -7,7 +7,12 @@ function App() {
       <div className="badge badge-warning absolute right-0 top-0 m-4">
         Build Time: {BUILD_TIME}
       </div>
-      <ReactFadeImage src="https://picsum.photos/id/237/400/1000" />
+      <div className="x-2">
+        <ReactFadeImage className="w-100 mx-auto" src="https://picsum.photos/id/237/200/300" />
+        <ReactFadeImage className="w-100 mx-auto" src="https://picsum.photos/id/100/200/300" />
+        <ReactFadeImage className="w-100 mx-auto" src="https://picsum.photos/id/101/200/300" />
+        <ReactFadeImage className="w-100 mx-auto" src="https://picsum.photos/id/102/200/300" />
+      </div>
     </div>
   );
 }
