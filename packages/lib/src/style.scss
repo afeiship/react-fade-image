@@ -1,0 +1,32 @@
+.react-fade-image {
+  --react-fade-image-duration: 1.01s;
+
+  @keyframes react-fade-image-fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes react-fade-image-fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  &.loaded-true,
+  &[data-loaded="true"] {
+    animation: react-fade-image-fade-in var(--react-fade-image-duration) ease-in forwards;
+  }
+
+  &,
+  &.loaded-false,
+  &[data-loaded="false"] {
+    animation: react-fade-image-fade-out var(--react-fade-image-duration) ease-out forwards;
+  }
+}
