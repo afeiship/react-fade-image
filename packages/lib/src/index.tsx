@@ -4,8 +4,7 @@ import React, { Component, HTMLAttributes } from 'react';
 const CLASS_NAME = 'react-fade-image';
 const DATA_LOADED = 'data-loaded';
 const BOOL_TRUE = 'true';
-const BLANK_IMG =
-  'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+const BLANK_IMG = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
 
 export type ReactFadeImageProps = {
   lazy?: boolean;
@@ -46,9 +45,7 @@ export default class ReactFadeImage extends Component<ReactFadeImageProps> {
   handleLoad = (inEvent: React.SyntheticEvent<HTMLImageElement>) => {
     const { lazy, onChange } = this.props;
     if (!lazy) {
-      this.setState({ loaded: true }, () => {
-        onChange?.(inEvent);
-      });
+      this.setState({ loaded: true }, () => onChange?.(inEvent));
     }
   };
 
